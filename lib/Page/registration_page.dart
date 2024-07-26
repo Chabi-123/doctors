@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gridview/Page/Sign_in_page.dart';
+import 'package:gridview/data/registrationdata.dart';
 import 'package:gridview/models/registrationModel.dart';
 
 class Registration extends StatefulWidget {
@@ -168,18 +170,23 @@ class _RegistrationState extends State<Registration> {
                   minWidth: MediaQuery.of(context).size.width * 0.8,
                   color: Colors.blue,
                   onPressed: (){
-                    _formKey.currentState!.validate(
-                    );
-                    Registrationmodel(
-                        firstName: _firstName.text.toString(),
-                        lastrName: _lastName.text.toString(),
-                        email: _email.text.toString(),
-                        password: _password.text.toString()
-                    );
+                    if(_formKey.currentState!.validate()){
+                      user.add(
+                          Registrationmodel(
+                              firstName: _firstName.text.toString(),
+                              lastrName: _lastName.text.toString(),
+                              email: _email.text.toString(),
+                              password: _password.text.toString(),
+                          ),
+                      );
+                    }
+                    Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>SignInPage()));
+
 
                   },
                   child: Text("Register Now!"),
-                )
+                ),
+
               ],
             ),
           ),
@@ -204,7 +211,7 @@ class _RegistrationState extends State<Registration> {
                     },
                     icon: icon,
                   ),
-                  // suffixIcon: Icon(Icons.abc),
+                  // s uffixIcon: Icon(Icons.abc),
                   // prefix: Icon(Icons.abc),
                   // prefixIcon: Icon(Icons.abc)
                 );

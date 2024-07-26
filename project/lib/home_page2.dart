@@ -20,7 +20,7 @@ class _HomePage2State extends State<HomePage2> {
               height: 40,
             ),
             Container(
-              padding: EdgeInsets.only(left: 10),
+              padding: EdgeInsets.only(left: 12),
               height: MediaQuery.of(context).size.height*0.08,
               width: double.infinity,
               color: Colors.white,
@@ -29,12 +29,12 @@ class _HomePage2State extends State<HomePage2> {
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.menu,color: primaryColor,size: 35,),
-                      SizedBox(width: 20,),
-                      Text('Hi,   User Name',style: myStyle(20,primaryColor),),
+                      Icon(Icons.menu,size: 34,),
+                      SizedBox(width: 25,),
+                      Text('Hi,   User Name',style: myStyle(20,),),
                     ],
                   ),
-                  Text("Let's have productive workout today! ",style: myStyle(15,Colors.grey.shade600),),
+                  Text("Let's have productive workout today! ",style: myStyle(15,Colors.grey.shade600,),),
                 ],
               ),
             ),
@@ -56,6 +56,31 @@ class _HomePage2State extends State<HomePage2> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(image: AssetImage("assets/images/strong-man.jpg"),fit: BoxFit.cover)
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Current Workout Plan',style: myStyle(17,),),
+                          Row(
+                            children: [
+                              Text('See all Details  ',style: myStyle(13,),),
+                              Icon(Icons.read_more,),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10,right: 10,),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Bodywaight Program',style: myStyle(15,),),
+                          Text('0%',style: myStyle(15,),),
+                        ],
                       ),
                     ),
                   ],
@@ -89,7 +114,7 @@ class _HomePage2State extends State<HomePage2> {
                         image: DecorationImage(image: AssetImage('${alldata[index].imgUrl}'))
                     ),
                   ),
-                  Text('${alldata[index].name }',style: myStyle(18),)
+                  Text('${alldata[index].name }',style: myStyle(18,),)
                 ],
               ),
             );
