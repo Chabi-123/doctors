@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gridview/Page/doctor_homepage.dart';
 import 'package:gridview/Page/registration_page.dart';
 import 'package:gridview/data/registrationdata.dart';
-import 'package:gridview/models/sign_inModel.dart';
 
-import '../models/registrationModel.dart';
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
 
@@ -121,7 +119,6 @@ class _SignInPageState extends State<SignInPage> {
                   height: 10,
                 ),
                 Text('Forgot Password',style: TextStyle(fontSize: 20),),
-                Text("${user[0].email}"),
                 SizedBox(
                   height: 20,
                 ),
